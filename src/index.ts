@@ -1,4 +1,5 @@
 import { Command } from 'commander';
+import inquirer from 'inquirer';
 
 const program = new Command();
 program
@@ -19,6 +20,17 @@ program.parse(process.argv);
 
 if (program.init) {
   console.log('init something')
+  inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'test',
+      message: 'Are you handsome?',
+      default: true
+    }
+  ]).then((answers) => {
+    console.log('结果为:')
+    console.log(answers)
+  })
 }
 
 if (program.generate) {
