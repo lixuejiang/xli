@@ -5,9 +5,10 @@ import inquirer from 'inquirer';
 const program = new Command();
 program
   .version('0.1.0', '-v, --version')
-  .command('clone <source> [destination]')
-  .description('clone a repository into a newly created directory')
+  .command('add <source> [destination]')
+  .description('add a repository into a newly created directory')
   .action((source: string, destination: string) => {
+    console.log(source, destination);
     console.log('clone command called');
   });
 
